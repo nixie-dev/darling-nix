@@ -33,9 +33,16 @@ in
 {
   name = "darling";
 
-  nodes.machine = {
-    programs.darling.enable = true;
-  };
+  hostPkgs = pkgs;
+
+  nodes.machine = ({ pkgs, ... }: {
+    security.wrappers.darling = {
+      source = lib.getExe pkgs.darling;
+      owner = "root";
+      group = "root";
+      setuid = true;
+    };
+  });
 
   testScript = ''
     start_all()
