@@ -260,7 +260,6 @@ stdenv.mkDerivation {
     homepage = "https://www.darlinghq.org";
     changelog = "https://github.com/darlinghq/darling/releases";
     license = licenses.gpl3Plus;
-    maintainers = with maintainers; [ zhaofengli ];
     platforms = [ "x86_64-linux" ];
     mainProgram = "darling";
   };
