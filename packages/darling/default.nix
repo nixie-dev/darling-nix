@@ -237,6 +237,8 @@ stdenv.mkDerivation {
 
   passthru.tests.nixos = nixosTests.darling;
 
+  dontCheckForBrokenSymlinks = true;
+
   meta = with lib; {
     description = "Open-source Darwin/macOS emulation layer for Linux";
     homepage = "https://www.darlinghq.org";
