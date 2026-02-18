@@ -6,5 +6,5 @@
 }:
 
 writeShellScriptBin "darling" ''
-  exec ${util-linux}/bin/unshare -mUrc -S0 --map-auto ${darling}/bin/darling "$@"
+  exec ${util-linux}/bin/unshare -mUcr -S0 ${darling}/bin/darling "$@"
 ''
